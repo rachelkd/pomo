@@ -1,6 +1,10 @@
 <script>
-    let title = "Pomo";
+    import Title from "./Title.svelte";
+    import Timer from "./Timer.svelte";
+    let appName = "Pomo";
 </script>
-<h1>Hello, welcome to 
-    <span class="appName">{title}</span>.
-</h1>
+
+<Title title = {"Pomo"} />
+<div class="timer">
+    <Timer />
+</div>

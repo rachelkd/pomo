@@ -78,3 +78,7 @@ button:focus:not(:focus-visible) {
 .appName {
 	color: var(--color-theme-1);
 }
+.timer {
+	align-items: center;
+	text-align: center;
+}
