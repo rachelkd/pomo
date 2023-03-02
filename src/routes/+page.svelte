@@ -5,6 +5,7 @@
 </script>
 
 <Title title = {"Pomo"} />
+
 <div class="timer">
     <Timer />
 </div>
