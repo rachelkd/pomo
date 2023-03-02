@@ -1,8 +1,8 @@
-@import '@fontsource/fira-mono';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
 
 :root {
 	--font-body: 'Poppins', 'Open Sans', BlinkMacSystemFont, system-ui;
+	--font-mono: monospace;
 	--color-bg-0: #3C3941;
 	--color-bg-1: rgba(43, 41, 46, 1);
 	--color-theme-1: rgba(157, 139, 187, 1);
