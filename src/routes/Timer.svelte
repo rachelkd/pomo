@@ -1,33 +1,18 @@
 <!-- Timer -->
+<script>
+    export let minutes = 25;
+    export let seconds = 0;
+    let setTime = (25*60) + seconds;
+</script>
+
 <div class="timer-container">
-    <div class="div outer">
-        <div class="inner"></div>
+    <div class="progress-timer outer-circle">
+        <div class="progress-timer inner-circle">
+            <div class="time-count">
+                {minutes}:{#if seconds < 10}0{seconds}{:else}{seconds}
+                {/if}
+            </div>
+            
+        </div>
     </div>
 </div>
-
-<style>
-    .timer-container {
-        display: relative;
-        height: 360px;
-        width: 360px;
-        background-color: var(--color-text);
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-    }
-    .outer {
-        height: 360px;
-        width: 360px;
-        border-radius: 50%;
-        border: 1px solid var(--color-theme-1);
-
-    }
-    .inner {
-        height: 320px;
-        width: 320px;
-        border-radius: 50%;
-        border: 1px solid var(--color-theme-1);
-    }
-    
-
-</style>

@@ -6,7 +6,7 @@
 	--color-bg-0: #3C3941;
 	--color-bg-1: rgba(43, 41, 46, 1);
 	--color-theme-1: rgba(157, 139, 187, 1);
-	--color-theme-2: rgba(157, 139, 187, 1);
+	--color-theme-2: #C43573;
 	--color-text: rgba(255, 244, 219, 1);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
@@ -15,9 +15,12 @@
 }
 
 body {
+	background-color: var(--color-bg-0);
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--color-bg-0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 h1,
@@ -74,7 +77,7 @@ button:focus:not(:focus-visible) {
 	}
 }
 
-.appName {
+.accent-text {
 	color: var(--color-theme-1);
 }
 .title {
@@ -85,6 +88,31 @@ button:focus:not(:focus-visible) {
 .timer {
 	display: flex;
 	align-items: center;
-	text-align: center;
 	justify-content: center;
+}
+.timer-container {
+	width: 360px;
+	height: 360px;
+	/* background: cornflowerblue; */
+	position: relative;
+}
+.progress-timer {
+	border-radius: 50%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.outer-circle {
+	width: 360px;
+	height: 360px;
+	box-shadow: 0px 0px 28px 0px rgba(196,53,115,0.5);
+}
+.inner-circle {
+	width: 320px;
+	height: 320px;
+	box-shadow: inset 0px 0px 28px 0px rgba(196,53,115,0.5);
+}
+.time-count {
+	font-weight: 100;
+	font-size: 4rem;
 }
