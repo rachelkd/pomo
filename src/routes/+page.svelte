@@ -8,5 +8,5 @@
 <!-- <Title title = {appName} /> -->
 <!-- <h1><span class="accent-text">{appName}</span> - Pomodoro Timer</h1> -->
 <div class="timer">
-    <Timer />
+    <Timer minutes={30} seconds={10}/>
 </div>
