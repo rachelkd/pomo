@@ -1,6 +1,6 @@
 <script>
-    import Title from "./Title.svelte";
-    import Timer from "./Timer.svelte";
+    import Title from "./components/Title.svelte";
+    import Timer from "./components/Timer.svelte";
     
     let appName = "Pomo";
 </script>
