@@ -13,5 +13,5 @@
 </div>
 
 <div class="timer">
-    <Timer />
+    <Timer minutes={30} seconds={10}/>
 </div>
