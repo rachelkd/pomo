@@ -123,3 +123,28 @@ button:focus:not(:focus-visible) {
 	user-select: none;
 	cursor: default;
 }
+
+.settings {
+	position: absolute;
+	left: 0;
+	margin-left: 1rem;
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+}
+.btn {
+	border: none;
+	background-color: transparent;
+	margin-bottom: 1.2rem;
+	color: var(--color-text);
+	align-items: center;
+
+}
+.btn i {
+	font-size: 28px;
+}
+.btn:hover i {
+	color: var(--color-theme-1);
+}
