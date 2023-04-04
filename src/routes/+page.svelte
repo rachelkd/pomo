@@ -1,18 +1,24 @@
 <script>
     import { setContext, getContext, onMount, onDestroy } from "svelte";
-    import { tick } from 'svelte';
-    import Title from "./components/Title.svelte";
+    // import Title from "./components/Title.svelte";
     import Timer from "./components/Timer.svelte";
     import Settings from "./components/Settings.svelte";
+
+    import timeDefaults from "./times.js";
     
     let appName = "Pomo";
 
     // Variables
-    let minutes = 25;
-    let seconds = 0;
+    let times = [...timeDefaults];
+    let phaseCycle = ["work", "short-break", "work", "long-break"];
+    let phaseCycleIndex = 0;
+    let current = { phase: "work", minutes: 25, seconds: 0};
+    $: minutes = current.minutes;
+    $: seconds = current.seconds;
     $: time = (minutes*60) + seconds; // Time in seconds
     let intervalId;
     let timerStarted = false;
+    
 
     // Functions
     function startTimer() {
@@ -35,6 +41,16 @@
             startTimer();
         }
     }
+    function changePhase() {
+        stopTimer();
+        if(phaseCycleIndex < 3) {
+            phaseCycleIndex++;
+        } else {
+            phaseCycleIndex = 0;
+        }
+        current = times.find(item => item.phase === phaseCycle[phaseCycleIndex]);
+        console.log(current);
+    }
 
     // Lifecycle functions
     onDestroy(() => {
@@ -49,6 +65,7 @@
     {minutes}
     {seconds}
     {timerStarted} 
+    {changePhase}
     {handlePause} />
 </div>
 
