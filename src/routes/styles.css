@@ -163,3 +163,8 @@ button:focus:not(:focus-visible) {
 .timer-btn p {
 	font-weight: 100;
 }
+
+.timer-btn .hover {
+	font-size: 42px;
+	stroke: none;
+}

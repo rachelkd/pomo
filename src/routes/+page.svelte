@@ -73,5 +73,6 @@
     <Timer 
     {time} 
     {timerStarted} 
-    {handlePause} />
+    {handlePause} 
+    currentPhase = {current.phase} />
 </div>
