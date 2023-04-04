@@ -6,23 +6,16 @@
     export let minutes = 0;
     export let seconds = 0;
     export let timerStarted = false;
-    export let intervalId;
-    export let startTimer = () => {};
-    export let stopTimer = () => {};
+
+    // export let startTimer = () => {};
+    // export let stopTimer = () => {};
+    export let handlePause = () => {};
 
     let showTimeSettings = false;
     let showBreakSettings = false;
 
     // Functions
-    function handlePause() {
-        if(timerStarted) {
-            // console.log("From settings, timer stopped");
-            stopTimer();
-        } else {
-            // console.log("From settings, timer started");
-            startTimer();
-        }
-    }
+    
 </script>
 
 

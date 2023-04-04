@@ -105,12 +105,14 @@ button:focus:not(:focus-visible) {
 .outer-circle {
 	width: 360px;
 	height: 360px;
-	box-shadow: 0px 0px 28px 0px rgba(196,53,115,0.5);
+	box-shadow: 0px 0px 28px 0px var(--color-text);
+	background-color: var(--color-text);
 }
 .inner-circle {
 	width: 320px;
 	height: 320px;
-	box-shadow: inset 0px 0px 28px 0px rgba(196,53,115,0.5);
+	box-shadow: inset 0px 0px 28px 0px var(--color-text);
+	background-color: var(--color-bg-0);
 }
 .time-count {
 	font-weight: 100;
@@ -148,4 +150,16 @@ button:focus:not(:focus-visible) {
 }
 .btn:hover i {
 	color: var(--color-theme-1);
+}
+
+.timer-btn {
+	background-color: transparent;
+	border: none;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text);
+}
+.timer-btn p {
+	font-weight: 100;
 }
