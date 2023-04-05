@@ -1,7 +1,7 @@
 <!-- Timer -->
 <script>
     import { onMount, onDestroy } from 'svelte';
-    import { tick } from 'svelte';
+    import { fade } from 'svelte/transition';
 
     export let time = 0;
     export let currentPhase = "";
@@ -32,21 +32,22 @@
                 <button class = "timer-btn" on:click={ () => {
                     handlePause();
                     showStart = false;
-                    } } on:mouseover = { () => {
+                    } } 
+                    on:mouseover = { () => {
                     hovering = true;
                     handleHover();
                     } } on:focus = { () => {} } on:mouseleave = { () => {hovering = false;} }>
                     <p>
                         {#if hovering && !timerStarted && showStart}
-                            <p class="hover">
+                            <p class="hover" in:fade>
                                 press to<br>start
                             </p>
                         {:else if hovering && !timerStarted}
-                            <p class="hover">
+                            <p class="hover" in:fade>
                                 {statusText}
                             </p>
                         {:else}
-                            {displayMinutes}:{displaySeconds < 10 ? '0' + displaySeconds : displaySeconds}
+                            <p in:fade>{displayMinutes}:{displaySeconds < 10 ? '0' + displaySeconds : displaySeconds}</p>
                         {/if}
                     </p>
                 </button>
