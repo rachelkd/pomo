@@ -39,7 +39,7 @@
                     <p>
                         {#if hovering && !timerStarted && showStart}
                             <p class="hover">
-                                Start
+                                press to<br>start
                             </p>
                         {:else if hovering && !timerStarted}
                             <p class="hover">
@@ -53,5 +53,9 @@
             </div>
             
         </div>
+    </div>
+
+    <div class="progress-circle">
+
     </div>
 </div>

@@ -25,6 +25,10 @@
         timerStarted = true;
         intervalId = setInterval(() => {
             time--;
+            if(time === 0) { // Stop timer when it hits 0 seconds
+                stopTimer();
+                // Play alarm sound?
+            }
         }, 1000);
         
         console.log({timerStarted});
@@ -49,7 +53,8 @@
             phaseCycleIndex = 0;
         }
         current = times.find(item => item.phase === phaseCycle[phaseCycleIndex]);
-        console.log(current);
+        console.log("Phase changed: ");
+        console.log({current});
     }
 
     // Lifecycle functions
