@@ -15,6 +15,9 @@
     let current = { phase: "work", minutes: 25, seconds: 0};
     $: minutes = current.minutes;
     $: seconds = current.seconds;
+    // Testing seconds:
+    // let minutes = 0;
+    // let seconds = 3;
     $: time = (minutes*60) + seconds; // Time in seconds
     let intervalId;
     let timerStarted = false;
@@ -39,10 +42,10 @@
         console.log({timerStarted});
     }
     function handlePause() {
-        if(timerStarted) {
-            stopTimer();
-        } else {
+        if(!timerStarted && time != 0) {
             startTimer();
+        } else {
+            stopTimer();
         }
     }
     function changePhase() {
@@ -79,5 +82,5 @@
     {time} 
     {timerStarted} 
     {handlePause} 
-    currentPhase = {current.phase} />
+    {current} />
 </div>
