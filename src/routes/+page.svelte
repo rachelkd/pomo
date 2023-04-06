@@ -21,6 +21,8 @@
     $: time = (minutes*60) + seconds; // Time in seconds
     let intervalId;
     let timerStarted = false;
+    // Alarm:
+    // let alarm = new Audio('./audio/timer_done.mp3');
     
 
     // Functions
@@ -30,7 +32,7 @@
             time--;
             if(time === 0) { // Stop timer when it hits 0 seconds
                 stopTimer();
-                // Play alarm sound?
+                alarm.play(); // Play alarm sound
             }
         }, 1000);
         
