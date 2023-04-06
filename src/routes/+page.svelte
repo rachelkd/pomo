@@ -22,7 +22,7 @@
     let intervalId;
     let timerStarted = false;
     // Alarm:
-    // let alarm = new Audio('./audio/timer_done.mp3');
+    let alarm;
     
 
     // Functions
@@ -86,3 +86,5 @@
     {handlePause} 
     {current} />
 </div>
+
+<audio src="https://github.com/rachelkd/pomo/blob/main/static/audio/timer_done.mp3?raw=true" bind:this={alarm}></audio>
