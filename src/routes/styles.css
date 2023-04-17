@@ -198,6 +198,8 @@ button:focus:not(:focus-visible) {
 	margin-top: 5rem;
 	padding: 3rem;
 	position: relative;
+	background: var(--color-bg-0);
+	border-radius: 10px;
 }
 .modal-container .close-btn {
 	position: absolute;
@@ -210,6 +212,9 @@ button:focus:not(:focus-visible) {
 	border: none;
 	font-size: 25px;
 	color: rgb(249, 126, 126);
+}
+.modal-container .close-btn:hover {
+	color: var(--color-text);
 }
 .timer-settings {
 	position: relative;

@@ -104,10 +104,18 @@
 
 <div class="timer-settings">
     {#if showTimeSettings}
-        <TimeSetting timeModes={["work"]} toggleForm={toggleWorkTimeForm}/>
+        <TimeSetting
+        timeModes={["work"]}
+        toggleForm={toggleWorkTimeForm}
+        {minutes}
+        {seconds} />
     {/if}
     {#if showBreakSettings}
-        <TimeSetting timeModes={["short", "long"]} toggleForm={toggleBreakTimeForm}/>
+        <TimeSetting
+        timeModes={["short-break", "long-break"]}
+        toggleForm={toggleBreakTimeForm}
+        {minutes}
+        {seconds} />
     {/if}
 </div>
 
