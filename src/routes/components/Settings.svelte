@@ -3,32 +3,24 @@
     import { fade } from 'svelte/transition';
     
     // Variables
-    export let minutes = 0;
-    export let seconds = 0;
+    // export let minutes = 0;
+    // export let seconds = 0;
     export let timerStarted = false;
     export let changePhase = () => {}; 
 
-    // export let startTimer = () => {};
-    // export let stopTimer = () => {};
     export let handlePause = () => {};
 
-    let showTimeSettings = false;
-    let showBreakSettings = false;
-
     // Functions
-    
+    export let toggleWorkTimeForm = () => {};
+    export let toggleBreakTimeForm = () => {};
 </script>
 
 
 <button class = btn on:click={ () => {
-    showTimeSettings = !showTimeSettings;
-    showBreakSettings = false;
-    // console.log({showTimeSettings});
+    toggleWorkTimeForm();
 } }><i class="fa-regular fa-clock" /></button>
 <button class = btn on:click={ () => {
-    showBreakSettings = !showBreakSettings;
-    showTimeSettings = false;
-    // console.log({showBreakSettings});
+    toggleBreakTimeForm();
 } }><i class="fa-solid fa-mug-saucer" /></button>
 <button class = btn on:click = { handlePause } >
     {#if !timerStarted} <!-- if timer paused -->
