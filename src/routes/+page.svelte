@@ -87,7 +87,6 @@
         });
     }
 
-    changeTime("work", 26, 30);
     // Lifecycle functions
     onDestroy(() => {
         stopTimer();

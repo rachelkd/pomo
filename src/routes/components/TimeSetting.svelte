@@ -11,16 +11,21 @@
     function handleClose() {
         toggleForm();
         // Change time functions need to be passed down into this comp from App.svelte
-        for (let index in timeModes) {
-            phase = timeModes[index].phase;
-            // console.log(phase);
-            minutes = timeModes[index].minutes;
-            // console.log(minutes);
-            seconds = timeModes[index].seconds;
-            // console.log(seconds);
-            changeTime(phase, minutes, seconds);
+        for (let i in timeModes) {
+            phase = timeModes[i].phase;
+            console.log(phase);
+            if(timeModes[i].minutes <= 59 && timeModes[i].seconds <= 59) {
+                minutes = timeModes[i].minutes;
+                console.log(minutes);
+                seconds = timeModes[i].seconds;
+                console.log(seconds);
+                changeTime(phase, minutes, seconds);
+            } else {
+                phase = null;
+                minutes = null;
+                seconds = null;
+            }      
         }
-
     }
 </script>
 
@@ -32,9 +37,9 @@
         {#each timeModes as timeMode}
             <div class="input-container">
                 <label for="minutes">Minutes: </label>
-                <input type="number" id="minutes" bind:value={timeMode.minutes} />
+                <input type="number" id="minutes" max="59" bind:value={timeMode.minutes} />
                 <label for="seconds">Seconds: </label>
-                <input type="number" id="seconds" bind:value={timeMode.seconds} />
+                <input type="number" id="seconds" max="59" bind:value={timeMode.seconds} />
             </div>
         {/each}
     </div>

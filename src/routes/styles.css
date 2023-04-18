@@ -225,6 +225,21 @@ button:focus:not(:focus-visible) {
 	font-weight: 100;
 	font-style: italic;
 }
+.modal-container h2 {
+	color: var(--color-theme-1);
+}
+.modal-container input {
+	color: var(--color-text);
+	background-color: rgba(255, 255, 255,0.35);
+	border-radius: 5px;
+	border: none;
+	font-size: 1.8rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 50px;
+	padding-left: 2%;
+}
 .timer-settings {
 	position: relative;
 }
