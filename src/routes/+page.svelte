@@ -13,7 +13,7 @@
     let times = [...timeDefaults];
     let phaseCycle = ["work", "short-break", "work", "long-break"];
     let phaseCycleIndex = 0;
-    let current = { phase: "work", minutes: 25, seconds: 0};
+    let current = { phase: "work", minutes: 25, seconds: 0 };
     $: minutes = current.minutes;
     $: seconds = current.seconds;
     // Testing seconds:
@@ -24,9 +24,12 @@
     let timerStarted = false;
     // Alarm:
     let alarm;
-    // Show time settings
+    // Time settings
     let showTimeSettings = false;
     let showBreakSettings = false;
+    let workSettings = times.filter(obj => obj.phase === "work");
+    let breakSettings = times.filter(obj => obj.phase === "short-break" || obj.phase === "long-break");
+    let setPhase = null;
 
     // Functions
     function startTimer() {
@@ -76,7 +79,15 @@
         console.log({showBreakSettings});
         console.log({showTimeSettings});
     }
+    // Time Settings functions
+    function changeTime(phase, minutes, seconds) {
+        setPhase = times.find(item => item.phase === phase);
+        times = times.map(item => {
+            return item.phase === setPhase ? {...item, minutes, seconds} : {...item};
+        });
+    }
 
+    changeTime("work", 26, 30);
     // Lifecycle functions
     onDestroy(() => {
         stopTimer();
@@ -105,17 +116,17 @@
 <div class="timer-settings">
     {#if showTimeSettings}
         <TimeSetting
-        timeModes={["work"]}
+        title = {"Work Time"}
+        timeModes={workSettings}
         toggleForm={toggleWorkTimeForm}
-        {minutes}
-        {seconds} />
+        {changeTime} />
     {/if}
     {#if showBreakSettings}
         <TimeSetting
-        timeModes={["short-break", "long-break"]}
+        title = {"Break Times"}
+        timeModes={breakSettings}
         toggleForm={toggleBreakTimeForm}
-        {minutes}
-        {seconds} />
+        {changeTime} />
     {/if}
 </div>
 
