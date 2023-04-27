@@ -88,6 +88,7 @@
             console.log(`Changed time for ${setPhase.phase} to ${setPhase.minutes} minutes and ${setPhase.seconds} seconds`);
         }
         setPhase = null;
+        current = times.find(item => item.phase === phaseCycle[phaseCycleIndex]);
     }
 
     // Lifecycle functions
