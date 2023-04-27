@@ -1,7 +1,7 @@
 <script>
     import {blur, fade, fly} from 'svelte/transition';
     export let title = "Default title";
-    export let timeModes = { phase: "work", minutes: 25, seconds: 0 };
+    export let timeModes = [{ phase: "work", minutes: 25, seconds: 0 }];
     export let toggleForm = () => {};
     export let changeTime = () => {};
     let phase;
@@ -14,18 +14,18 @@
         for (let i in timeModes) {
             phase = timeModes[i].phase;
             console.log(phase);
-            if(timeModes[i].minutes <= 59 && timeModes[i].seconds <= 59) {
+            console.log("timemodes mins: " + timeModes[i].minutes);
+            if(timeModes[i].minutes <= 59 && timeModes[i].minutes >= 0 && timeModes[i].seconds <= 59 && timeModes[i].seconds >= 0) {
                 minutes = timeModes[i].minutes;
                 console.log(minutes);
                 seconds = timeModes[i].seconds;
                 console.log(seconds);
                 changeTime(phase, minutes, seconds);
-            } else {
-                phase = null;
-                minutes = null;
-                seconds = null;
-            }      
+            }
         }
+        phase = null;
+        minutes = null;
+        seconds = null;   
     }
 </script>
 
@@ -37,9 +37,9 @@
         {#each timeModes as timeMode}
             <div class="input-container">
                 <label for="minutes">Minutes: </label>
-                <input type="number" id="minutes" max="59" bind:value={timeMode.minutes} />
+                <input type="number" id="minutes" min="0" max="59" bind:value={timeMode.minutes} />
                 <label for="seconds">Seconds: </label>
-                <input type="number" id="seconds" max="59" bind:value={timeMode.seconds} />
+                <input type="number" id="seconds" min="0" max="59" bind:value={timeMode.seconds} />
             </div>
         {/each}
     </div>

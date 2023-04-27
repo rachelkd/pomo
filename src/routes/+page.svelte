@@ -82,9 +82,12 @@
     // Time Settings functions
     function changeTime(phase, minutes, seconds) {
         setPhase = times.find(item => item.phase === phase);
-        times = times.map(item => {
-            return item.phase === setPhase ? {...item, minutes, seconds} : {...item};
-        });
+        if(setPhase) {
+            setPhase.minutes = minutes;
+            setPhase.seconds = seconds;
+            console.log(`Changed time for ${setPhase.phase} to ${setPhase.minutes} minutes and ${setPhase.seconds} seconds`);
+        }
+        setPhase = null;
     }
 
     // Lifecycle functions
