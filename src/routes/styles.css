@@ -48,7 +48,8 @@ h1 {
 }
 
 h2 {
-	font-size: 1rem;
+	font-size: 1.3rem;
+	font-weight: 600;
 }
 
 pre {
@@ -66,6 +67,10 @@ input,
 button {
 	font-size: inherit;
 	font-family: inherit;
+}
+
+label {
+	display: block;
 }
 
 button:focus:not(:focus-visible) {
@@ -181,4 +186,60 @@ button:focus:not(:focus-visible) {
 .timer-btn .hover {
 	font-size: 42px;
 	stroke: none;
+}
+.modal-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 2;
+}
+.modal-content {
+	width: 85vw;
+	max-width: 35rem;
+	margin: 0 auto;
+	margin-top: 5rem;
+	padding: 3rem;
+	position: relative;
+	background: var(--color-bg-0);
+	border-radius: 10px;
+}
+.modal-container .close-btn {
+	position: absolute;
+	top: 12%;
+	right: 8%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	border: none;
+	font-size: 25px;
+	color: rgb(249, 126, 126);
+}
+.modal-container .close-btn:hover {
+	color: var(--color-text);
+}
+.modal-container .instructions {
+	font-weight: 100;
+	font-style: italic;
+}
+.modal-container h2 {
+	color: var(--color-theme-1);
+}
+.modal-container input {
+	color: var(--color-text);
+	background-color: rgba(255, 255, 255,0.35);
+	border-radius: 5px;
+	border: none;
+	font-size: 1.8rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 50px;
+	padding-left: 2%;
+}
+.timer-settings {
+	position: relative;
 }
