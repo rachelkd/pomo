@@ -1,6 +1,6 @@
 # Pomo - Pomodoro Timer
 ### Built by Rachel Deng for Capstone graduation requirement
-A minimalist focus management aid for those needed to complete tasks efficiently.
+A minimalist focus management aid for those who need to complete tasks efficiently.
 
 ## How does the pomodoro timer work?
 Click the center of the screen to begin the pomodoro timer.\
