@@ -1,6 +1,17 @@
-# Pomo - Pomodoro Timer
-### Built by Rachel Deng for Capstone graduation requirement
-A minimalist focus management aid for those who need to complete tasks efficiently.
+
+# Pomo
+
+
+A minimalistic pomodoro timer to complete your daily tasks.
+
+Designed in Figma, coded by Rachel Deng in Svelte.js, hosted by Netlify.
+
+View Pomo [here](https://pomo-racheldeng.netlify.app/).
+## Screenshot
+
+![App Screenshot](https://i.imgur.com/Y94e6DN.png)
+
+
 
 ## How does the pomodoro timer work?
 Click the center of the screen to begin the pomodoro timer.\
